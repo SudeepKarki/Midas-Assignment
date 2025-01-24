@@ -29,6 +29,7 @@ const themeConfig: ThemeConfig = {
     },
     Tabs: {
       cardBg: '#fff',
+      itemColor: '#9D9D9D',
       itemSelectedColor: '#fff',
       colorBgContainer: '#1990FE',
     },
