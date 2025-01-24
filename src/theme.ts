@@ -3,7 +3,8 @@ import type { ThemeConfig } from "antd";
 const themeConfig: ThemeConfig = {
 
   token: {
-    fontFamily: "Poppins"
+    fontFamily: "Poppins",
+    fontSize: 12,
   },
   components: {
     Breadcrumb: {
@@ -30,6 +31,15 @@ const themeConfig: ThemeConfig = {
       cardBg: '#fff',
       itemSelectedColor: '#fff',
       colorBgContainer: '#1990FE',
+    },
+    Table: {
+      headerSplitColor: 'transparent',
+      headerBorderRadius: 15,
+      headerBg: "#D1D1D1",
+      borderColor: "rgb(191,191,191)"
+    },
+    Tag: {
+      borderRadiusSM: 30,
     }
   },
 }

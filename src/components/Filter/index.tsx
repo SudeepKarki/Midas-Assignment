@@ -7,9 +7,7 @@ export default function Filter() {
   };
   return (
     <Flex gap={8} vertical>
-      <Typography.Text type="secondary" className="text-small">
-        Filter :
-      </Typography.Text>
+      <Typography.Text type="secondary">Filter :</Typography.Text>
       <Form layout="vertical">
         <Row>
           <Col span={12}>

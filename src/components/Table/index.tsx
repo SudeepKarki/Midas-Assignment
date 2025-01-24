@@ -34,6 +34,7 @@ const columns: TableProps<DataType>["columns"] = [
     title: "S.No",
     key: "sno",
     render: (_dom, _entity, index) => index + 1,
+    align: "center",
   },
   {
     title: "UHID",
@@ -72,6 +73,7 @@ const columns: TableProps<DataType>["columns"] = [
     title: "Department",
     dataIndex: "department",
     key: "department",
+    render: (value) => value.toUpperCase(),
   },
   {
     title: "Doctor Name",
@@ -82,11 +84,30 @@ const columns: TableProps<DataType>["columns"] = [
     title: "Queue No.",
     dataIndex: "queueNo",
     key: "queueNo",
+    align: "center",
   },
   {
     title: "Previous Rec.",
     dataIndex: "prevRec",
     key: "prevRec",
+    align: "center",
+    render: (val) => {
+      return (
+        <Select
+          defaultValue={1}
+          placeholder="Select Doctor Name"
+          style={{ width: "100%" }}
+          // onChange={handleChange}
+          options={[
+            { value: 1, label: "1" },
+            { value: 2, label: "2" },
+            { value: 3, label: "3" },
+            { value: 4, label: "4" },
+            { value: 5, label: "5" },
+          ]}
+        />
+      );
+    },
   },
   {
     title: "Status",
@@ -99,7 +120,15 @@ const columns: TableProps<DataType>["columns"] = [
         free: "volcano",
       };
       const color = colors[status];
-      return <Tag color={color}>{status.toUpperCase()}</Tag>;
+      return (
+        <Tag
+          color={color}
+          bordered={false}
+          style={{ width: "100%", textAlign: "center" }}
+        >
+          {status.toUpperCase()}
+        </Tag>
+      );
     },
   },
   {
@@ -156,7 +185,7 @@ export default function CustomTable() {
           rowKey="uhid"
           pagination={{
             showTotal: (total, range) => (
-              <Typography.Text style={{ fontSize: "12px", color: "#898989" }}>
+              <Typography.Text type="secondary">
                 {` Showing ${range[0]} to ${range[1]} of ${total} entries`}
               </Typography.Text>
             ),

@@ -1,4 +1,5 @@
 import { Tabs, TabsProps } from "antd";
+import "./index.scss";
 
 interface TabProps {
   data: TabsProps["items"];
